@@ -1,10 +1,10 @@
 import Stack from '@mui/material/Stack';
 import ButtonSubmit from '@mui/material/Button';
 
-export default function Button(){
+export default function Button({type}){
     return(
         <Stack>
-            <ButtonSubmit variant='contained' color='success'>Enviar</ButtonSubmit>
+            <ButtonSubmit type={type} variant='contained' color='success'>Enviar</ButtonSubmit>
         </Stack>
     )
 }
