@@ -7,7 +7,7 @@ import src.registroPessoaFisica.model.PessoaFisica;
 import src.registroPessoaFisica.repository.PessoaFisicaRepository;
 
 @RestController
-@RequestMapping("pessoaFisica")
+@RequestMapping("/api/pessoaFisica")
 public class PessoaFisicaController {
 
     @Autowired

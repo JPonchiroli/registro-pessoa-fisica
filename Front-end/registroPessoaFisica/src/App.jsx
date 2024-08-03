@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Form from '../src/components/Form'
 import Title from '../src/components/Title'
+import TesteConexao from './components/TesteConexao'
 
 export default function App() {
   const [listaPessoas, setListaPessoas] = useState([])
@@ -9,7 +10,7 @@ export default function App() {
     setListaPessoas([...listaPessoas, pessoa])
   }
 
-  console.log(listaPessoas)
+  //console.log(listaPessoas)
 
   return (
   <>
@@ -17,6 +18,7 @@ export default function App() {
       Registro Pessoa Física
     </Title>
     <Form pessoaRegistrada={(pessoa) => novaPessoaAdicionada(pessoa)} />
+    <TesteConexao />
     </>
   )
 }
