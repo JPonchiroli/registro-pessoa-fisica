@@ -57,6 +57,7 @@ export default function Form() {
         setComplemento("")
         setMunicipio("")
         setEstado("")
+        window.location.reload();
       };
 
     return (

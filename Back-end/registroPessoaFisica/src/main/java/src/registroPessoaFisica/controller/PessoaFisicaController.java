@@ -26,6 +26,12 @@ public class PessoaFisicaController {
         return ResponseEntity.ok(pessoaFisicaSalva);
     }
 
+    @GetMapping("/qtdPessoasCadastradas")
+    public long numeroPessoasCadastradas(){
+        long numPessoaFisica = repository.count();
+        return numPessoaFisica;
+    }
+
     @GetMapping("/relatorio")
     public ResponseEntity<String> gerarRelatorioCSV() {
         List<PessoaFisica> pessoas = repository.findAll();
