@@ -9,20 +9,20 @@ public class PessoaFisica {
     @Column(unique = true)
     private String cpf;
     private String nome;
-    private int idade;
-    private int cep;
+    private String telefone;
+    private String cep;
     private String municipio;
     private String estado;
     private String bairro;
-    private int numero;
+    private String numero;
     private String complemento;
 
     public PessoaFisica(){}
 
-    public PessoaFisica(String cpf, String nome, int idade, int cep, String municipio, String estado, String bairro, int numero, String complemento) {
+    public PessoaFisica(String cpf, String nome, String telefone, String cep, String municipio, String estado, String bairro, String numero, String complemento) {
         this.cpf = cpf;
         this.nome = nome;
-        this.idade = idade;
+        this.telefone = telefone;
         this.cep = cep;
         this.municipio = municipio;
         this.estado = estado;
@@ -47,19 +47,19 @@ public class PessoaFisica {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String gettelefone() {
+        return telefone;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void settelefone(String telefone) {
+        this.telefone = telefone;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -87,11 +87,11 @@ public class PessoaFisica {
         this.bairro = bairro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -108,7 +108,7 @@ public class PessoaFisica {
         return "PessoaFisica{" +
                 "cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
-                ", idade=" + idade +
+                ", telefone=" + telefone +
                 ", cep=" + cep +
                 ", municipio='" + municipio + '\'' +
                 ", estado='" + estado + '\'' +

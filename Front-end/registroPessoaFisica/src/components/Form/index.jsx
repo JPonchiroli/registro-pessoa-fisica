@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import styled from 'styled-components';
 import Input from '../Input';
 import Button from '../Button';
+import api from '../../axios';
 
 const FormContainer = styled.form`
     flex: 1;
@@ -12,7 +13,7 @@ const FormContainer = styled.form`
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 `
 
-export default function Form({ pessoaRegistrada }) {
+export default function Form() {
     const [cpf, setCpf] = useState('');
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');   
@@ -23,24 +24,30 @@ export default function Form({ pessoaRegistrada }) {
     const [municipio, setMunicipio] = useState('');
     const [estado, setEstado] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
     
         const pessoa = {
           cpf,
           nome,
           telefone,
-          endereco: {
-            cep,
-            bairro,
-            numero,
-            complemento,
-            municipio,
-            estado,
-          },
+          cep,
+          bairro,
+          numero,
+          complemento,
+          municipio,
+          estado,
         };
     
-        pessoaRegistrada(pessoa);
+        try {
+            const response = await api.post('/pessoaFisica', pessoa)
+            console.log(pessoa)
+            alert("Pessoa Física criada com sucesso", response.data)
+        } catch(error) {
+            alert("Erro ao criar Pessoa Física, verifique o console!")
+            console.error( error)
+        }
+
         setCpf("")
         setNome("")
         setTelefone("")

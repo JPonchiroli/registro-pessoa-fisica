@@ -16,6 +16,7 @@ public class PessoaFisicaController {
     @PostMapping()
     public ResponseEntity<PessoaFisica> cadastrarPessoaFisica(@RequestBody PessoaFisica pessoaFisica){
         PessoaFisica pessoaFisicaSalva = repository.save(pessoaFisica);
+        System.out.println("Recebido: " + pessoaFisica);
         return ResponseEntity.ok(pessoaFisicaSalva);
     }
 
