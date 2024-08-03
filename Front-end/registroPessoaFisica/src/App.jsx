@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Form from '../src/components/Form'
 import Title from '../src/components/Title'
+import DownloadCSV from './components/Button/DownloadCSV'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -17,7 +18,8 @@ export default function App() {
         Registro Pessoa Física
       </Title>
     </StyledDiv>
-    <Form />  
+    <Form />
+    <DownloadCSV />
   </>
   )
 }

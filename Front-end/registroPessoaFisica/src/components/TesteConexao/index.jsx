@@ -11,12 +11,12 @@ const StyledCircle = styled.div`
   cursor: pointer;
 
   &:hover::after {
-    content: "${(props) => props.hoverMessage}";
+    content: "${(props) => props.hovermessage}";
     position: absolute;
     top: 130%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: ${(props) => props.hoverColor};
+    background-color: ${(props) => props.hovercolor};
     padding: 5px;
     border-radius: 5px;
     opacity: 0.8;
@@ -43,8 +43,8 @@ export default function TesteConexao(){
     <div>
       <StyledCircle 
         style={{ backgroundColor: `#${cor}`}} 
-        hoverMessage={mensagem} 
-        hoverColor={cor}>
+        hovermessage={mensagem} 
+        hovercolor={cor}>
       </StyledCircle>
     </div>
   )
