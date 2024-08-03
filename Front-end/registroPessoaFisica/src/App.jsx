@@ -1,17 +1,23 @@
-import { useState } from 'react'
+import styled from 'styled-components'
 import Form from '../src/components/Form'
 import Title from '../src/components/Title'
-import TesteConexao from './components/TesteConexao'
+
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export default function App() {
 
   return (
   <>
-    <Title style={{ display: "flex", justifyContent: "center"}}>
-      Registro Pessoa Física
-    </Title>
-    <Form />
-    <TesteConexao />
-    </>
+    <StyledDiv>
+      <Title>
+        Registro Pessoa Física
+      </Title>
+    </StyledDiv>
+    <Form />  
+  </>
   )
 }

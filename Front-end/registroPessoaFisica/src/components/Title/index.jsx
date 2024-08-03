@@ -1,5 +1,10 @@
+import TesteConexao from '../TesteConexao'
+
 export default function Title({children, style}){
     return(
-        <h1 style={style}>{children}</h1>
+        <>
+            <TesteConexao />
+            <h1 style={style}>{children}</h1>
+        </>
     )
 }
