@@ -1,5 +1,11 @@
+import styled from "styled-components";
 import api from "../../../axios"
 import ButtonCSV from '@mui/material/Button';
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 export default function DownloadCSV(){
   const handleDownload = async () => {
@@ -20,6 +26,15 @@ export default function DownloadCSV(){
     }
   }
   return(
-    <ButtonCSV onClick={handleDownload}>Download Relatório CSV</ButtonCSV>
+    <StyledDiv>
+      <ButtonCSV 
+        onClick={handleDownload}  
+        variant="contained"
+        color="info"
+        
+      >
+          Download Relatório CSV
+      </ButtonCSV>
+    </StyledDiv>
   )
 }

@@ -33,7 +33,7 @@ export default function App() {
       </Title>
     </StyledDiv>
     <Form />
-    {conferePessoasCadastradas ? <DownloadCSV /> : null}
+    {conferePessoasCadastradas ? <DownloadCSV />: null}
   </>
   )
 }
