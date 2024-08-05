@@ -21,7 +21,7 @@ export default function App() {
       setNumPessoasCadastradas(response.data); 
       setConferePessoasCadastradas(response.data > 0);
     }).catch(error => {
-      console.error("Erro ao Executar Requisiçaõ!", error);
+      console.error("Erro ao Executar Requisição!", error);
     })
   }, [])
 

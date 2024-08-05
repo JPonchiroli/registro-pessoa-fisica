@@ -3,6 +3,7 @@ package src.registroPessoaFisica.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(schema = "public")
 public class PessoaFisica {
 
     @Id
