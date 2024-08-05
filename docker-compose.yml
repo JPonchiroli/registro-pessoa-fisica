@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+    db:
+        image: postgres:latest
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+
+    backend:
+        build:
+          context: ./Back-end/registroPessoaFisica/
+          dockerfile: Dockerfile
+        image: backend/latest
+        ports:
+            - "8080:8080"
+
+    frontend:
+        build:
+          context: ./Front-end/registroPessoaFisica/
+          dockerfile: Dockerfile
+        image: frontend/latest
+        ports:
+            - "8081:8081"
