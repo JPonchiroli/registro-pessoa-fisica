@@ -15,5 +15,5 @@ Este projeto Java utiliza Spring para interagir com um banco de dados Postgres, 
   * Contém toda lógica do back-end do projeto para conexão com o banco e inserção.
 * **Front-end:**
   * Contém o código da tela principal do projeto, utilizando bibliotecas para estilização e de componentes.
-* **Doscker Compose:**
+* **Docker Compose:**
   * Ferramenta para gerenciar projeto, facilitando desenvolvimento, deployment e manutenção
