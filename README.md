@@ -6,7 +6,7 @@ Este projeto Java utiliza Spring para interagir com um banco de dados Postgres, 
 
 * **Conexão com o Banco de Dados:** Estabelecimento de uma conexão segura e eficiente com o banco de dados Postgres
 * **Insersão de Pessoa Física:** Adição de novas pessoas ao banco
-* **Documentação:** Documentção usando Swagger possuindo todas as API's para testes unitários
+* **Documentação:** Documentação usando Swagger possuindo todas as API's para testes unitários
 * **Auto Preenchimento de Endereço:** Preenchimento dos dados de endereço via API ViaCep
 * **Relatório CSV:** Download de arquivo CSV para exibição das pessoas cadastradas.
 
