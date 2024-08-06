@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Box from '@mui/material/Box';
 import styled from 'styled-components';
 import Input from '../Input';
@@ -40,6 +40,21 @@ export default function Form() {
         }
         buscarCep()
     }, [cep])     
+    
+    useEffect(() => {
+        const maskedCPF = cpf.replace(/\D/g, '').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        setCpf(maskedCPF);  
+      }, [cpf]);
+
+      useEffect(() => {
+        const maskedTelefone = telefone.replace(/\D/g, '').replace(/(\d{2})(\d)/, '($1) $2').replace(/(\d{5})(\d)/, '$1-$2');
+        setTelefone(maskedTelefone)   
+      }, [telefone]);
+
+      useEffect(() => {
+        const maskedCEP = cep.replace(/\D/g, '').replace(/(\d{5})(\d{3})/, '$1-$2');
+        setCep(maskedCEP)    
+      }, [cep]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -62,7 +77,8 @@ export default function Form() {
             alert("Pessoa Física criada com sucesso", response.data)
         } catch(error) {
             alert("Erro ao criar Pessoa Física, verifique o console!")
-            console.error( error)
+            console.error(error)
+            console.log(pessoa)
         }
 
         setCpf("")
