@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import styled from 'styled-components';
 import Input from '../Input';
@@ -23,6 +23,23 @@ export default function Form() {
     const [complemento, setComplemento] = useState('');
     const [municipio, setMunicipio] = useState('');
     const [estado, setEstado] = useState('');
+
+    useEffect(() => {
+        const buscarCep = async () => {
+           if(cep.length === 8){
+                try {
+                    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    const data = await response.json()
+                    setBairro(data.bairro)
+                    setMunicipio(data.localidade)
+                    setEstado(data.uf)
+                } catch(error){
+                    console.error("Erro ao buscar CEP" + error)
+                }
+           }
+        }
+        buscarCep()
+    }, [cep])     
 
     const handleSubmit = async (event) => {
         event.preventDefault();
